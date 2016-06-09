@@ -1,0 +1,62 @@
+[
+  {
+    "key": "everest",
+    "name": "Mt. Everest",
+    "elevation": 8848,
+    "wikipedia_title": "Mount_Everest",
+    "coordinates": {
+      "latitude": 27.9878,
+      "longitude": 86.9250
+    }
+  },
+  {
+    "key": "kangchenjunga",
+    "name": "Kangchenjunga",
+    "elevation": 8586,
+    "wikipedia_title": "Kangchenjunga",
+    "coordinates": {
+      "latitude": 27.7025,
+      "longitude": 88.1467
+    }
+  },
+  {
+    "key": "lhotse",
+    "name": "Lhotse",
+    "elevation": 8516,
+    "wikipedia_title": "Lhotse",
+    "coordinates": {
+      "latitude": 27.9626,
+      "longitude": 86.9336
+    }
+  },
+  {
+    "key": "makalu",
+    "name": "Makalu",
+    "elevation": 8481,
+    "wikipedia_title": "Makalu",
+    "coordinates": {
+      "latitude": 27.8860,
+      "longitude": 87.0912
+    }
+  },
+  {
+    "key": "chooyu",
+    "name": "Cho Oyu",
+    "elevation": 8201,
+    "wikipedia_title": "Cho_Oyu",
+    "coordinates": {
+      "latitude": 28.0973,
+      "longitude": 86.6585
+    }
+  },
+  {
+    "key": "manaslu",
+    "name": "Manaslu",
+    "elevation": 8156,
+    "wikipedia_title": "Manaslu",
+    "coordinates": {
+      "latitude": 28.5497,
+      "longitude": 88.5597
+    }
+  }
+]
