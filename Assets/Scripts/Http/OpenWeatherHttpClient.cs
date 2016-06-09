@@ -47,6 +47,15 @@ namespace TheHimalayas.Http {
             AddSuccessResponseListener(successResponse);
             AddErrorResponseListener(errorResponse);
 
+            GetWeatherData();
+        }
+
+        /// <summary>
+        /// 
+        /// Get's weather data from server.
+        /// 
+        /// </summary>
+        public void GetWeatherData() {
             this.CreateRequest(GetApiUrl()).SendRequest();
         }
 
