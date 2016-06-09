@@ -1,20 +1,15 @@
-﻿namespace TheHimalayas.Http {
+﻿using TheHimalayas.Core;
+
+namespace TheHimalayas.Http {
 
     abstract public class OpenWeatherHttpClient : HttpClient {
 
         /// <summary>
         /// 
-        /// Longitude of the location for which the weather information is to be fetched.
+        /// Location for which the weather is to be found.
         /// 
         /// </summary>
-        protected float longitude;
-
-        /// <summary>
-        /// 
-        /// Latitude of the location for which the weather information is to be fetched.
-        /// 
-        /// </summary>
-        protected float latitude;
+        protected Location location;
 
         /// <summary>
         /// 
@@ -25,8 +20,18 @@
         /// <param name="longitude">Longitude of the location</param>
         /// <returns>Current Object for chaining</returns>
         public OpenWeatherHttpClient SetLocation(float latitude, float longitude) {
-            this.longitude = longitude;
-            this.latitude = latitude;
+            return this.SetLocation(new Location(latitude, longitude));
+        }
+
+        /// <summary>
+        /// 
+        /// Sets the Location information for which the weather information is to be fetched.
+        /// 
+        /// </summary>
+        /// <param name="location">The location to store</param>
+        /// <returns>Current Object for chaining</returns>
+        public OpenWeatherHttpClient SetLocation(Location location) {
+            this.location = location;
 
             return this;
         }

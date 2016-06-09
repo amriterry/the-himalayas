@@ -1,4 +1,6 @@
-﻿namespace TheHimalayas.Http.Url {
+﻿using TheHimalayas.Core;
+
+namespace TheHimalayas.Http.Url {
 
     public class CurrentWeatherUrlBuilder : OpenWeatherUrlBuilder {
 
@@ -17,12 +19,11 @@
         /// Builds the URL for the latitude and longitude given.
         /// 
         /// </summary>
-        /// <param name="latitude">Latitude of the location.</param>
-        /// <param name="longitude">Longitude of the location.</param>
+        /// <param name="location">The location for which the url is built.</param>
         /// <returns>API URL for the given location.</returns>
-        public override string BuildUrl(float latitude,float longitude) {
-            AddUrlOption("lat", latitude.ToString());
-            AddUrlOption("lon", longitude.ToString());
+        public override string BuildUrl(Location location) {
+            AddUrlOption("lat", location.Latitude.ToString());
+            AddUrlOption("lon", location.Longitude.ToString());
 
             return this.Build();
         }

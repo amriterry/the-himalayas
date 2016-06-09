@@ -24,7 +24,7 @@ namespace TheHimalayas.Http {
         /// </summary>
         /// <returns>API URL for fetching of data.</returns>
         public override string GetApiUrl() {
-            return urlBuilder.BuildUrl(this.latitude,this.longitude);
+            return urlBuilder.BuildUrl(this.location);
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using TheHimalayas.Core;
 
 namespace TheHimalayas.Http.Url {
 
@@ -132,9 +133,8 @@ namespace TheHimalayas.Http.Url {
         /// Builds the URL for the latitude and longitude given.
         /// 
         /// </summary>
-        /// <param name="latitude">Latitude of the location.</param>
-        /// <param name="longitude">Longitude of the location.</param>
+        /// <param name="location">The location for which the url is built.</param>
         /// <returns>API URL for the given location.</returns>
-        public abstract string BuildUrl(float latitude,float longitude);
+        public abstract string BuildUrl(Location location);
     }
 }
