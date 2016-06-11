@@ -10,7 +10,14 @@ namespace TheHimalayas.Engine {
         /// WeatherStore Instance.
         /// 
         /// </summary>
-        public WeatherStore weatherStore;
+        private WeatherStore weatherStore;
+
+        /// <summary>
+        /// 
+        /// MountainStore Instance.
+        /// 
+        /// </summary>
+        private MountainStore mountainStore;
 
         /// <summary>
         /// 
@@ -61,6 +68,20 @@ namespace TheHimalayas.Engine {
             }
 
             return weatherStore;
+        }
+
+        /// <summary>
+        /// 
+        /// Retunrs the MountainStore object
+        /// 
+        /// </summary>
+        /// <returns>MountainStore Object</returns>
+        public MountainStore GetMountainStore() {
+            if(mountainStore == null) {
+                mountainStore = new MountainStore();
+            }
+
+            return mountainStore;
         }
     }
 }

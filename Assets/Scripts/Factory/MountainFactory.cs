@@ -67,7 +67,7 @@ namespace TheHimalayas.Factory {
         /// Build Mountains by parsing the mountains info
         /// 
         /// </summary>
-        private void BuildMountains() {
+        public void BuildMountains() {
             mountains = parser.Parse(GetMountainsInfo());
         }
 
