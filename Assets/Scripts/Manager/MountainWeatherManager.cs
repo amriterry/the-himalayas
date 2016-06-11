@@ -57,7 +57,7 @@ namespace TheHimalayas.Manager {
         /// </summary>
         /// <param name="weather">Weather Object that was parsed</param>
         private void OnCurrentWeatherLoaded(Weather weather) {
-            AppEngine.Instance.GetWeatherStore().SetWeather(mountain, weather);
+            AppEngine.Instance.GetWeatherStore().SetToStore(mountain, weather);
         }
 
         /// <summary>

@@ -2,7 +2,7 @@
 
 namespace TheHimalayas.Store {
 
-    public class WeatherStore: Store<Mountain,Weather> {
+    public class MountainStore : Store<string,Mountain> {
 
     }
 }
