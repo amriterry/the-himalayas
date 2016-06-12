@@ -9,13 +9,6 @@ namespace TheHimalayas.Manager {
 
         /// <summary>
         /// 
-        /// Mountain Factory which builds the mountains.
-        /// 
-        /// </summary>
-        public MountainFactory mountainFactory;
-
-        /// <summary>
-        /// 
         /// Current Weather Data Manager to load current weather data.
         /// 
         /// </summary>
@@ -68,7 +61,7 @@ namespace TheHimalayas.Manager {
         /// <param name="mountainKey">Key from which the mountain object is to be selected.</param>
         /// <returns>Current Weather Object.</returns>
         public void LoadMountainCurrentWeather(string mountainKey) {
-            this.mountain = mountainFactory.GetMountain(mountainKey);
+            this.mountain = AppEngine.Instance.GetMountainStore().GetValue(mountainKey);
 
             if(mountain != null) {
                 this.LoadMountainCurrentWeather(this.mountain);

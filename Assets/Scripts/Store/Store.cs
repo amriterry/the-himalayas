@@ -98,7 +98,7 @@ namespace TheHimalayas.Store {
         /// 
         /// </summary>
         /// <param name="listener">Listener to forget</param>
-        public void ForegetOnStoreUpdateListener(StoreUpdateAction listener) {
+        public void ForgetOnStoreUpdateListener(StoreUpdateAction listener) {
             this.OnStoreUpdate -= listener;
         }
     }
