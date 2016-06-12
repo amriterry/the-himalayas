@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TheHimalayas.Engine;
+using TheHimalayas.Store;
 
 namespace TheHimalayas.UI {
 
@@ -34,14 +36,63 @@ namespace TheHimalayas.UI {
         /// </summary>
         public Button viewMountainBtn;
 
+        /// <summary>
+        /// 
+        /// Mountain Store object.
+        /// 
+        /// </summary>
+        private MountainStore store;
+
+        // Use this to initailize
+        void Start() {
+            store = AppEngine.Instance.GetMountainStore();
+
+            UpdateCurrentMountainText();
+        }
+
         // When the script enables
         void OnEnable() {
             viewMountainBtn.onClick.AddListener(LoadMountain3DScene);
+            nextMountainBtn.onClick.AddListener(GetNextMountain);
+            previousMountainBtn.onClick.AddListener(GetPreviousMountain);
         }
 
         // When the script disables
         void OnDisable() {
             viewMountainBtn.onClick.RemoveListener(LoadMountain3DScene);
+            nextMountainBtn.onClick.RemoveListener(GetNextMountain);
+            previousMountainBtn.onClick.RemoveListener(GetPreviousMountain);
+        }
+
+        /// <summary>
+        /// 
+        /// Moves the pointer to next element and updates the UI.
+        /// 
+        /// </summary>
+        private void GetNextMountain() {
+            store.MovePointerToNext();
+
+            UpdateCurrentMountainText();
+        }
+
+        /// <summary>
+        /// 
+        /// Moves the pointer to previous element and updates the UI.
+        /// 
+        /// </summary>
+        private void GetPreviousMountain() {
+            store.MovePointerToPrevious();
+
+            UpdateCurrentMountainText();
+        }
+
+        /// <summary>
+        /// 
+        /// Updates Mountain text with current mountain's name
+        /// 
+        /// </summary>
+        private void UpdateCurrentMountainText() {
+            UpdateMountainText(store.GetPointedMountain().name);
         }
 
         /// <summary>

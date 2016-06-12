@@ -74,6 +74,16 @@ namespace TheHimalayas.Store {
 
         /// <summary>
         /// 
+        /// Returns the store dictionary.
+        /// 
+        /// </summary>
+        /// <returns>The store dictionary</returns>
+        public Dictionary<T,U> GetStoreDictionary() {
+            return this.storeDictionary;
+        }
+
+        /// <summary>
+        /// 
         /// Adds OnStoreUpdate Event Listener
         /// 
         /// </summary>
