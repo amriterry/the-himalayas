@@ -6,8 +6,14 @@ namespace TheHimalayas.Manager {
 
     public class Mountain3DSceneManager : MonoBehaviour {
 
+        /// <summary>
+        /// 
+        /// Mountain Weather Manager Object
+        /// 
+        /// </summary>
         private MountainWeatherManager mountainWeatherManager;
 
+        // When the script first awakens
         void Awake() {
             mountainWeatherManager = GetComponent<MountainWeatherManager>();
         }
@@ -36,7 +42,6 @@ namespace TheHimalayas.Manager {
         /// <param name="value">Weather value that was updated</param>
         private void OnWeatherStoreUpdated(Mountain key, Weather value) {
             // Update Weather UI
-            Debug.Log("Weather Updated for " + key.name + " with " + value.ToString());
         }
     }
 }
