@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 475942}
   - 114: {fileID: 11459906}
   - 114: {fileID: 11410512}
+  - 114: {fileID: 11461490}
   m_Layer: 0
   m_Name: Mountain3DSceneManager
   m_TagString: Untagged
@@ -122,6 +123,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3f8c501f98f6664faa157cb5c683514, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiManager: {fileID: 0}
+--- !u!114 &11461490
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 104664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 405988a1fcc119147bfb9d1dd079073a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewMountainSelectorBtn: {fileID: 0}
+  mountainSelectorPanelContainer: {fileID: 0}
 --- !u!114 &11474128
 MonoBehaviour:
   m_ObjectHideFlags: 1

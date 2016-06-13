@@ -7,6 +7,11 @@ namespace TheHimalayas.Manager {
 
     public class Mountain3DSceneManager : MonoBehaviour {
 
+        /// <summary>
+        /// 
+        /// Mountain Weather UI Manager
+        /// 
+        /// </summary>
         public MountainWeatherUIManager uiManager;
 
         /// <summary>

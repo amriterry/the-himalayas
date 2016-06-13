@@ -201,6 +201,14 @@ Prefab:
       propertyPath: uiManager
       value: 
       objectReference: {fileID: 510097721}
+    - target: {fileID: 11461490, guid: db8a7bde582c32641a96a37316a18389, type: 2}
+      propertyPath: viewMountainSelectorBtn
+      value: 
+      objectReference: {fileID: 405917964}
+    - target: {fileID: 11461490, guid: db8a7bde582c32641a96a37316a18389, type: 2}
+      propertyPath: mountainSelectorPanelContainer
+      value: 
+      objectReference: {fileID: 1568816172}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: db8a7bde582c32641a96a37316a18389, type: 2}
   m_IsPrefabParent: 0
@@ -417,6 +425,88 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 217680705}
+--- !u!1001 &364717492
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1568816173}
+    m_Modifications:
+    - target: {fileID: 22477120, guid: 776ea7add605583479ae2951c7a71327, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22477120, guid: 776ea7add605583479ae2951c7a71327, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22477120, guid: 776ea7add605583479ae2951c7a71327, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22477120, guid: 776ea7add605583479ae2951c7a71327, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22477120, guid: 776ea7add605583479ae2951c7a71327, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22477120, guid: 776ea7add605583479ae2951c7a71327, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22477120, guid: 776ea7add605583479ae2951c7a71327, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22477120, guid: 776ea7add605583479ae2951c7a71327, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22477120, guid: 776ea7add605583479ae2951c7a71327, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22477120, guid: 776ea7add605583479ae2951c7a71327, type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22477120, guid: 776ea7add605583479ae2951c7a71327, type: 2}
+      propertyPath: m_SizeDelta.x
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 22477120, guid: 776ea7add605583479ae2951c7a71327, type: 2}
+      propertyPath: m_SizeDelta.y
+      value: -40
+      objectReference: {fileID: 0}
+    - target: {fileID: 22477120, guid: 776ea7add605583479ae2951c7a71327, type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22477120, guid: 776ea7add605583479ae2951c7a71327, type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22477120, guid: 776ea7add605583479ae2951c7a71327, type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22477120, guid: 776ea7add605583479ae2951c7a71327, type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22477120, guid: 776ea7add605583479ae2951c7a71327, type: 2}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 22477120, guid: 776ea7add605583479ae2951c7a71327, type: 2}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 776ea7add605583479ae2951c7a71327, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &397089165
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,6 +580,12 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 397089165}
+--- !u!114 &399091243 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11461490, guid: db8a7bde582c32641a96a37316a18389,
+    type: 2}
+  m_PrefabInternal: {fileID: 171186512}
+  m_Script: {fileID: 11500000, guid: 405988a1fcc119147bfb9d1dd079073a, type: 3}
 --- !u!1 &405917962
 GameObject:
   m_ObjectHideFlags: 0
@@ -502,7 +598,7 @@ GameObject:
   - 114: {fileID: 405917965}
   - 114: {fileID: 405917964}
   m_Layer: 5
-  m_Name: Button
+  m_Name: ViewMountainSelectorButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -563,7 +659,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 405917965}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 399091243}
+        m_MethodName: ToggleMountainSelector
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &405917965
@@ -870,6 +977,7 @@ RectTransform:
   - {fileID: 793938683}
   - {fileID: 1608693357}
   - {fileID: 615654898}
+  - {fileID: 1568816173}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_AnchorMin: {x: 0, y: 0}
@@ -2183,7 +2291,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1513117107}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 399091243}
+        m_MethodName: GoToMenuScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1513117107
@@ -2338,6 +2457,74 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3610eff605f81924d9f2f7bbb251b3a4, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1568816172
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 1568816173}
+  - 222: {fileID: 1568816175}
+  - 114: {fileID: 1568816174}
+  m_Layer: 5
+  m_Name: MountainSelectorPanelContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1568816173
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1568816172}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1721620415}
+  m_Father: {fileID: 510097720}
+  m_RootOrder: 4
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 500, y: 200}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1568816174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1568816172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.11764707, g: 0.19607845, b: 0.227451, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1568816175
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1568816172}
 --- !u!1 &1600434856
 GameObject:
   m_ObjectHideFlags: 0
@@ -2616,6 +2803,11 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1715592654}
+--- !u!224 &1721620415 stripped
+RectTransform:
+  m_PrefabParentObject: {fileID: 22477120, guid: 776ea7add605583479ae2951c7a71327,
+    type: 2}
+  m_PrefabInternal: {fileID: 364717492}
 --- !u!1 &1755413488
 GameObject:
   m_ObjectHideFlags: 0
