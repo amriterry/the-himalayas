@@ -26,6 +26,8 @@ namespace TheHimalayas.Manager {
             Mountain pointedMountain = AppEngine.Instance.GetMountainStore().GetPointedMountain();
 
             uiManager.UpdateMountainTexts(pointedMountain);
+            uiManager.SetLoadingText();
+
             mountainWeatherManager.LoadMountainCurrentWeather(pointedMountain);
         }
 

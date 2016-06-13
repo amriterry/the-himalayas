@@ -86,6 +86,37 @@ namespace TheHimalayas.UI {
 
         /// <summary>
         /// 
+        /// Set's the Loading text
+        /// 
+        /// </summary>
+        public void SetLoadingText() {
+            TruncateWeatherUITexts();
+
+            weatherStatusText.text = "Fetching Weather data...";
+            temperatureText.alignment = TextAnchor.MiddleCenter;
+            temperatureText.text = "Fetching Weather data...";
+        }
+
+        /// <summary>
+        /// 
+        /// Removes all Weather UI Texts
+        /// 
+        /// </summary>
+        private void TruncateWeatherUITexts() {
+            weatherStatusText.text = "";
+            weatherText.text = "";
+            locationText.text = "";
+            coordinatesText.text = "";
+            temperatureText.text = "";
+            minMaxTempText.text = "";
+            pressureText.text = "";
+            cloudinessText.text = "";
+            dctText.text = "";
+            temperatureText.alignment = TextAnchor.MiddleLeft;
+        }
+
+        /// <summary>
+        /// 
         /// Opens Detail Weather Panel
         /// 
         /// </summary>
@@ -121,6 +152,8 @@ namespace TheHimalayas.UI {
         /// </summary>
         /// <param name="weather">Weather information which is to be updated</param>
         public void UpdateMountainWeather(Weather weather) {
+            TruncateWeatherUITexts();
+
             weatherStatusText.text = "weather: at " + weather.temperature.ToCelciusString() + " in '" + weather.cityName + "'";
 
             locationText.text = "City: " +weather.cityName;
