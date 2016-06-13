@@ -1,10 +1,13 @@
 ﻿using TheHimalayas.Core;
 using TheHimalayas.Engine;
+using TheHimalayas.UI;
 using UnityEngine;
 
 namespace TheHimalayas.Manager {
 
     public class Mountain3DSceneManager : MonoBehaviour {
+
+        public MountainWeatherUIManager uiManager;
 
         /// <summary>
         /// 
@@ -20,7 +23,10 @@ namespace TheHimalayas.Manager {
 
         // Use this for initialization
         void Start() {
-            mountainWeatherManager.LoadMountainCurrentWeather(AppEngine.Instance.GetMountainStore().GetPointedMountain());
+            Mountain pointedMountain = AppEngine.Instance.GetMountainStore().GetPointedMountain();
+
+            uiManager.UpdateMountainTexts(pointedMountain);
+            mountainWeatherManager.LoadMountainCurrentWeather(pointedMountain);
         }
 
         // When the script enables
@@ -41,7 +47,7 @@ namespace TheHimalayas.Manager {
         /// <param name="key">Mountain for which the weather is updated.</param>
         /// <param name="value">Weather value that was updated</param>
         private void OnWeatherStoreUpdated(Mountain key, Weather value) {
-            // Update Weather UI
+            uiManager.UpdateMountainWeather(value);
         }
     }
 }

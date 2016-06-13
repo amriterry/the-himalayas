@@ -197,6 +197,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 11459906, guid: db8a7bde582c32641a96a37316a18389, type: 2}
+      propertyPath: uiManager
+      value: 
+      objectReference: {fileID: 510097721}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: db8a7bde582c32641a96a37316a18389, type: 2}
   m_IsPrefabParent: 0
@@ -789,6 +793,7 @@ GameObject:
   - 223: {fileID: 510097719}
   - 114: {fileID: 510097718}
   - 114: {fileID: 510097717}
+  - 114: {fileID: 510097721}
   m_Layer: 5
   m_Name: MainCanvas
   m_TagString: Untagged
@@ -872,6 +877,30 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &510097721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 510097716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 250db9ceeb0c5914db5f3b6ee0e57d96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mountainTexts:
+  - {fileID: 1035646435}
+  - {fileID: 1148947911}
+  weatherStatusText: {fileID: 92479508}
+  locationText: {fileID: 564462842}
+  weatherText: {fileID: 2005438849}
+  coordinatesText: {fileID: 397089167}
+  temperatureText: {fileID: 1684943293}
+  minMaxTempText: {fileID: 604837370}
+  pressureText: {fileID: 1514245525}
+  cloudinessText: {fileID: 1239894587}
+  dctText: {fileID: 217680707}
+  detailWeatherPanel: {fileID: 1608693356}
 --- !u!1 &564462840
 GameObject:
   m_ObjectHideFlags: 0
@@ -1500,7 +1529,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 968886788}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 510097721}
+        m_MethodName: OpenDetailWeatherPanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &968886788
@@ -2604,7 +2644,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1755413491}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 510097721}
+        m_MethodName: CloseDetailWeatherPanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1755413491
