@@ -1,4 +1,5 @@
-﻿using TheHimalayas.Core;
+﻿using System;
+using TheHimalayas.Core;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -132,11 +133,11 @@ namespace TheHimalayas.UI {
 
             minMaxTempText.text = "Min Temp: " + weather.minTemperature.ToCelciusString() + ", Max Temp: " + weather.maxTemperature.ToCelciusString();
 
-            pressureText.text = "Pressure: " + weather.pressure + "hPa";
+            pressureText.text = "Pressure: " + weather.pressure + " hPa";
 
             cloudinessText.text = "Cloudiness: " + weather.Cloudiness + "%";
 
-            dctText.text = "Last DCT: " + weather.DataCalculationTime.ToShortDateString();  
+            dctText.text = "Last DCT: " + string.Format("{0:g}", weather.DataCalculationTime);  
         }
     }
 }

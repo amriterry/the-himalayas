@@ -34,7 +34,7 @@
         /// </summary>
         /// <returns>Stringified Location</returns>
         public override string ToString() {
-            return this.Latitude + "\u00B0 N, " + this.Longitude + "\u00B0 E";
+            return this.Latitude + "\u00B0" + "N, " + this.Longitude + "\u00B0" + "E";
         }
     }
 }

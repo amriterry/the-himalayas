@@ -1,4 +1,6 @@
-﻿namespace TheHimalayas.Core {
+﻿using UnityEngine;
+
+namespace TheHimalayas.Core {
 
     public struct Temperature {
         /// <summary>
@@ -25,7 +27,7 @@
         /// </summary>
         /// <returns>Temperature in celcius</returns>
         public float InCelcius() {
-            return temp - 273.73f;
+            return Mathf.Round(temp - 273.73f);
         }
 
         /// <summary>
@@ -35,7 +37,7 @@
         /// </summary>
         /// <returns>Temperature in fahernheit</returns>
         public float InFahernheit() {
-            return temp - 180f;
+            return Mathf.Round(temp - 180f);
         }
 
         /// <summary>
@@ -45,7 +47,7 @@
         /// </summary>
         /// <returns>Stringified Temperature</returns>
         public string ToCelciusString() {
-            return InCelcius() + "\u00B0 C";
+            return InCelcius() + "\u00B0" + "C";
         }
 
         /// <summary>
@@ -55,7 +57,7 @@
         /// </summary>
         /// <returns>Stringified Temperature</returns>
         public string ToFahernheitString() {
-            return InFahernheit() + "\u00B0 F";
+            return InFahernheit() + "\u00B0" + "F";
         }
     }
 }
