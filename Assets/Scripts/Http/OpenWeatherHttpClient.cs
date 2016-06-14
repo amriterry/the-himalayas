@@ -1,4 +1,6 @@
-﻿using TheHimalayas.Core;
+﻿using System;
+using TheHimalayas.Core;
+using TheHimalayas.Http.Url;
 
 namespace TheHimalayas.Http {
 
@@ -43,11 +45,11 @@ namespace TheHimalayas.Http {
         /// </summary>
         /// <param name="successResponse">Response Delegate to be called when the request is successful</param>
         /// <param name="errorResponse">Response Delegate to be called when the request is not successful</param>
-        public void GetWeatherData(SuccessResponse successResponse, ErrorResponse errorResponse) {
+        public void GetData(SuccessResponse successResponse, ErrorResponse errorResponse) {
             AddSuccessResponseListener(successResponse);
             AddErrorResponseListener(errorResponse);
 
-            GetWeatherData();
+            GetData();
         }
 
         /// <summary>
@@ -55,7 +57,7 @@ namespace TheHimalayas.Http {
         /// Get's weather data from server.
         /// 
         /// </summary>
-        public void GetWeatherData() {
+        public void GetData() {
             this.CreateRequest(GetApiUrl()).SendRequest();
         }
 
@@ -65,6 +67,16 @@ namespace TheHimalayas.Http {
         /// 
         /// </summary>
         /// <returns>API URL for fetching of data.</returns>
-        abstract public string GetApiUrl();
+        public string GetApiUrl() {
+            return GetUrlBuilder().BuildUrl(this.location);
+        }
+
+        /// <summary>
+        /// 
+        /// Returns OpenWeatherUrlBuilder object
+        /// 
+        /// </summary>
+        /// <returns>OpenWeatherUrlBuilder object</returns>
+        protected abstract OpenWeatherUrlBuilder GetUrlBuilder();
     }
 }

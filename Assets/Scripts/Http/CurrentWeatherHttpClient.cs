@@ -1,4 +1,5 @@
-﻿using TheHimalayas.Http.Url;
+﻿using System;
+using TheHimalayas.Http.Url;
 using UnityEngine;
 
 namespace TheHimalayas.Http {
@@ -11,7 +12,7 @@ namespace TheHimalayas.Http {
         /// 
         /// </summary>
         private CurrentWeatherUrlBuilder urlBuilder;
-        
+
         // Called when the script first awakes.
         void Awake() {
             urlBuilder = new CurrentWeatherUrlBuilder();
@@ -19,12 +20,12 @@ namespace TheHimalayas.Http {
 
         /// <summary>
         /// 
-        /// Returns API URL from which the data is to be fetched.
+        /// Returns OpenWeatherUrlBuilder object
         /// 
         /// </summary>
-        /// <returns>API URL for fetching of data.</returns>
-        public override string GetApiUrl() {
-            return urlBuilder.BuildUrl(this.location);
+        /// <returns>OpenWeatherUrlBuilder object</returns>
+        protected override OpenWeatherUrlBuilder GetUrlBuilder() {
+            return urlBuilder;
         }
     }
 }

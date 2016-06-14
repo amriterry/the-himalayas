@@ -84,7 +84,7 @@ namespace TheHimalayas.Manager {
         /// <returns>Current weather object.</returns>
         public void GetCurrentWeather(Location location) {
             weatherClient.SetLocation(location.Latitude, location.Longitude)
-                         .GetWeatherData();
+                         .GetData();
         }
 
         /// <summary>
