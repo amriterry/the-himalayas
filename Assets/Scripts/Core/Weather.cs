@@ -13,38 +13,77 @@ namespace TheHimalayas.Core {
 
         /// <summary>
         /// 
-        /// Temperature of the location
+        /// City Name
         /// 
         /// </summary>
-        public Temperature temperature;
+        public string cityName;
+
+        /// <summary>
+        /// 
+        /// Core Weather Data
+        /// 
+        /// </summary>
+        public WeatherMeta weatherMeta;
+
+        /// <summary>
+        /// 
+        /// Temperature Property
+        /// 
+        /// </summary>
+        public Temperature temperature {
+            get {
+                return weatherMeta.temperature;
+            }
+
+            set {
+                weatherMeta.temperature = value;
+            }
+        }
 
         /// <summary>
         /// 
         /// Minimum Temperature of the location
         /// 
         /// </summary>
-        public Temperature minTemperature;
+        public Temperature minTemperature {
+            get {
+                return weatherMeta.minTemperature;
+            }
+
+            set {
+                weatherMeta.minTemperature = value;
+            }
+        }
 
         /// <summary>
         /// 
         /// Maximum Temperature of the location
         /// 
         /// </summary>
-        public Temperature maxTemperature;
+        public Temperature maxTemperature {
+            get {
+                return weatherMeta.maxTemperature;
+            }
+
+            set {
+                weatherMeta.maxTemperature = value;
+            }
+        }
 
         /// <summary>
         /// 
         /// Pressure in the location
         /// 
         /// </summary>
-        public float pressure;
+        public float pressure {
+            get {
+                return weatherMeta.pressure;
+            }
 
-        /// <summary>
-        /// 
-        /// Cloudiness in percentage
-        /// 
-        /// </summary>
-        private float cloudiness;
+            set {
+                weatherMeta.pressure = value;
+            }
+        }
 
         /// <summary>
         /// 
@@ -53,32 +92,28 @@ namespace TheHimalayas.Core {
         /// </summary>
         public float Cloudiness {
             get {
-                return cloudiness;
+                return weatherMeta.Cloudiness;
             }
 
             set {
-                cloudiness = value;
-
-                if (value > 100f || value < 0f) {
-                    cloudiness = 0;
-                }
+                weatherMeta.Cloudiness = value;
             }
         }
-
-        /// <summary>
-        /// 
-        /// City Name
-        /// 
-        /// </summary>
-        public string cityName;
-        
 
         /// <summary>
         /// 
         /// Last Data Calculation Time
         /// 
         /// </summary>
-        public double dataCalculationTime;
+        public double dataCalculationTime {
+            get {
+                return weatherMeta.dataCalculationTime;
+            }
+
+            set {
+                weatherMeta.dataCalculationTime = value;
+            }
+        }
 
         /// <summary>
         /// 
@@ -87,8 +122,17 @@ namespace TheHimalayas.Core {
         /// </summary>
         public DateTime DataCalculationTime {
             get {
-                return TheHimalayas.Utils.DateTime.UnixTimeStampToDateTime(dataCalculationTime);
+                return weatherMeta.DataCalculationTime;
             }
+        }
+
+        /// <summary>
+        /// 
+        /// Create a weather objet
+        /// 
+        /// </summary>
+        public Weather() {
+            weatherMeta = new WeatherMeta();
         }
     }
 }
