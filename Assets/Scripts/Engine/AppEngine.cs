@@ -21,6 +21,13 @@ namespace TheHimalayas.Engine {
 
         /// <summary>
         /// 
+        /// ForecastStore Instance.
+        /// 
+        /// </summary>
+        private ForecastStore forecastStore;
+
+        /// <summary>
+        /// 
         /// AppEngine Instance
         /// 
         /// </summary>
@@ -82,6 +89,20 @@ namespace TheHimalayas.Engine {
             }
 
             return mountainStore;
+        }
+
+        /// <summary>
+        /// 
+        /// Retunrs the ForecastStore object
+        /// 
+        /// </summary>
+        /// <returns>ForecastStore Object</returns>
+        public ForecastStore GetForecastStore() {
+            if(forecastStore == null) {
+                forecastStore = new ForecastStore();
+            }
+
+            return forecastStore;
         }
     }
 }
