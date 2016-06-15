@@ -5,21 +5,7 @@ using UnityEngine.UI;
 
 namespace TheHimalayas.UI {
 
-    public class MountainWeatherUIManager : MonoBehaviour {
-
-        /// <summary>
-        /// 
-        /// Array of Mountain Texts
-        /// 
-        /// </summary>
-        public Text[] mountainTexts;
-
-        /// <summary>
-        /// 
-        /// Weather status text
-        /// 
-        /// </summary>
-        public Text weatherStatusText;
+    public class ForecastUI : MonoBehaviour {
 
         /// <summary>
         /// 
@@ -77,81 +63,32 @@ namespace TheHimalayas.UI {
         /// </summary>
         public Text dctText;
 
-        // When the script first starts
-        void Start() {
-            SetWeatherLoadingText();
-        }
-
         /// <summary>
         /// 
-        /// Set's the Loading text
+        /// Updates Weather Meta in the UI
         /// 
         /// </summary>
-        public void SetWeatherLoadingText() {
-            TruncateWeatherUITexts();
-
-            weatherStatusText.text = "Fetching Weather data...";
-            temperatureText.alignment = TextAnchor.MiddleCenter;
-            temperatureText.text = "Fetching Weather data...";
-        }
-
-        /// <summary>
-        /// 
-        /// Removes all Weather UI Texts
-        /// 
-        /// </summary>
-        private void TruncateWeatherUITexts() {
-            weatherText.text = "";
-            locationText.text = "";
-            coordinatesText.text = "";
-            temperatureText.text = "";
-            minMaxTempText.text = "";
-            pressureText.text = "";
-            cloudinessText.text = "";
-            dctText.text = "";
-            temperatureText.alignment = TextAnchor.MiddleLeft;
-        }
-
-        /// <summary>
-        /// 
-        /// Updates Mountain Texts
-        /// 
-        /// </summary>
-        /// <param name="mountain">Mountain for which the mountain text is to be updated</param>
-        public void UpdateMountainTexts(Mountain mountain) {
-            foreach(Text t in mountainTexts) {
-                t.text = mountain.name;
-            }
-        }
-
-        /// <summary>
-        /// 
-        /// Updates Weather information in UI for the mountain
-        /// 
-        /// </summary>
-        /// <param name="weather">Weather information which is to be updated</param>
-        public void UpdateMountainWeather(Weather weather) {
-            TruncateWeatherUITexts();
-
-            weatherStatusText.text = "Weather: at " + weather.temperature.ToCelciusString() + " in '" + weather.cityName + "'";
-
-            UpdateLocation(weather.cityName);
+        /// <param name="cityName">City name</param>
+        /// <param name="location">Location of the mountain</param>
+        /// <param name="weatherMeta">Weather meta Object</param>
+        public void UpdateWeatherMeta(string cityName,Location location,WeatherMeta weatherMeta) {
+            UpdateLocation(cityName);
 
             UpdateWeatherBrief("Weather");
 
-            UpdateCoordinates(weather.location.ToString());
+            UpdateCoordinates(location.ToString());
 
-            UpdateTemperature(weather.temperature.ToCelciusString());
+            UpdateTemperature(weatherMeta.temperature.ToCelciusString());
 
-            UpdateMinMaxTemperature(weather.minTemperature.ToCelciusString(), weather.maxTemperature.ToCelciusString());
+            UpdateMinMaxTemperature(weatherMeta.minTemperature.ToCelciusString(), weatherMeta.maxTemperature.ToCelciusString());
 
-            UpdatePressure(weather.pressure);
+            UpdatePressure(weatherMeta.pressure);
 
-            UpdateCloudiness(weather.Cloudiness);
+            UpdateCloudiness(weatherMeta.Cloudiness);
 
-            UpdateDCT(weather.DataCalculationTime);
+            UpdateDCT(weatherMeta.DataCalculationTime);
         }
-
+       
         /// <summary>
         /// 
         /// Updates City location
