@@ -18,7 +18,7 @@ namespace TheHimalayas.Parsers {
             var parsed = JSON.Parse(json);
 
             forecast.cityName = parsed["city"]["name"];
-            forecast.location = new Location(parsed["coord"]["lat"].AsFloat, parsed["coord"]["lon"].AsFloat);
+            forecast.location = new Location(parsed["city"]["coord"]["lat"].AsFloat, parsed["city"]["coord"]["lon"].AsFloat);
 
             int cnt = parsed["cnt"].AsInt;
 

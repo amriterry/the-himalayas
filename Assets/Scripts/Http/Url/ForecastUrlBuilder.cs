@@ -9,7 +9,7 @@ namespace TheHimalayas.Http.Url {
         /// Number of Forecasts for which the URL is to be built
         /// 
         /// </summary>
-        private const int FORECAST_COUNT = 3;
+        private const int FORECAST_COUNT = 2;
 
         /// <summary>
         /// 
