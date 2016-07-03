@@ -1,6 +1,7 @@
 ﻿using TheHimalayas.Core;
 using System.Collections.Generic;
 using SimpleJSON;
+using System;
 
 namespace TheHimalayas.Parsers {
 
@@ -39,6 +40,7 @@ namespace TheHimalayas.Parsers {
             mountain.elevation = ParseMountainElevation(mountainJson);
             mountain.wikipediaTitle = ParseMountainWikipediaTitle(mountainJson);
             mountain.coordinates = ParseMountainLocation(mountainJson);
+            mountain.heightMapResource = ParseHeightMapResource(mountainJson);
 
             return mountain;
         }
@@ -85,6 +87,17 @@ namespace TheHimalayas.Parsers {
         /// <returns>Parsed Mountain Location</returns>
         private static Location ParseMountainLocation(JSONNode mountainJson) {
             return new Location(mountainJson["coordinates"]["latitude"].AsFloat, mountainJson["coordinates"]["longitude"].AsFloat);
+        }
+
+        /// <summary>
+        /// 
+        /// Returns the height map resource path
+        /// 
+        /// </summary>
+        /// <param name="mountainJson">JSON to be parsed</param>
+        /// <returns>Parsed Height Map file path</returns>
+        private static string ParseHeightMapResource(JSONNode mountainJson) {
+            return mountainJson["terrain"]["heightMap"];
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace TheHimalayas.Core {
+﻿using UnityEngine;
+
+namespace TheHimalayas.Core {
 
     public class Mountain {
 
@@ -29,5 +31,33 @@
         /// 
         /// </summary>
         public Location coordinates;
+
+        /// <summary>
+        /// 
+        /// Height Map Resource
+        /// 
+        /// </summary>
+        public string heightMapResource;
+
+        /// <summary>
+        /// 
+        /// Actual Height ap texture
+        /// 
+        /// </summary>
+        private Texture2D heightMap;
+
+        /// <summary>
+        /// 
+        /// Returns heightmap texture loaded from the disk
+        /// 
+        /// </summary>
+        /// <returns>Heightmap texture</returns>
+        public Texture2D GetHeightMap() {
+            if(heightMap == null) {
+                heightMap = Resources.Load(heightMapResource) as Texture2D;
+            }
+
+            return heightMap;
+        }
     }
 }
