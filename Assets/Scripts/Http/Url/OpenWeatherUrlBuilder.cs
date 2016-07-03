@@ -55,6 +55,7 @@ namespace TheHimalayas.Http.Url {
             url = AppendMainUrlSegment(url);
             url = AppendUrlOptions(url);
             url = AppendAppId(url);
+            url = AppendAccuracyOptions(url);
 
             return url;
         }
@@ -107,6 +108,17 @@ namespace TheHimalayas.Http.Url {
         /// <returns>App ID appended URL.</returns>
         private string AppendAppId(string url) {
             return url + "&appid=" + GetAppId();
+        }
+
+        /// <summary>
+        /// 
+        /// Appends Accuracy option to the URL
+        /// 
+        /// </summary>
+        /// <param name="url">Base URL in which option is to be appended</param>
+        /// <returns>Appended URL.</returns>
+        private string AppendAccuracyOptions(string url) {
+            return url + "&type=accurate";
         }
 
         /// <summary>
