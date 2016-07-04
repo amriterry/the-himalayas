@@ -2573,6 +2573,22 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1150856777}
+--- !u!1 &1206359196 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 132522, guid: 3610eff605f81924d9f2f7bbb251b3a4, type: 2}
+  m_PrefabInternal: {fileID: 1557404190}
+--- !u!114 &1206359200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1206359196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3101c18f88ea514b91bc9c12d36666a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mountainMaterial: {fileID: 2100000, guid: 27c52fb8c72aced4eae99048cbf64d0c, type: 2}
 --- !u!1001 &1216064805
 Prefab:
   m_ObjectHideFlags: 0
@@ -3241,16 +3257,8 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 408160, guid: 3610eff605f81924d9f2f7bbb251b3a4, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 132522, guid: 3610eff605f81924d9f2f7bbb251b3a4, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11475640, guid: 3610eff605f81924d9f2f7bbb251b3a4, type: 2}
-      propertyPath: mountainMaterial
-      value: 
-      objectReference: {fileID: 2100000, guid: dc8468a374f8e574bafe9cb481fa1d5f, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3610eff605f81924d9f2f7bbb251b3a4, type: 2}
   m_IsPrefabParent: 0

@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using TheHimalayas.Engine;
 using TheHimalayas.Factory;
+using TerrainFactory;
+using TheHimalayas.Core;
 
 namespace TheHimalayas.Manager {
 
@@ -11,7 +13,7 @@ namespace TheHimalayas.Manager {
         /// MountainFactory Instance
         /// 
         /// </summary>
-        private MountainFactory factory;
+        private static MountainFactory factory;
 
         /// <summary>
         /// 
