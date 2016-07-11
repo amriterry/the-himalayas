@@ -16,5 +16,19 @@
 
             return dateTime;
         }
+
+        /// <summary>
+        /// 
+        /// Returns current Nepal Standard Time
+        /// 
+        /// </summary>
+        /// <returns>Converted Nepal Standard Time</returns>
+        public static System.DateTime GetCurrentDateTimeAtKathmandu() {
+            System.DateTime dateTime = System.DateTime.UtcNow;
+
+            System.DateTime nepalTime = dateTime.AddHours(5).AddMinutes(45);
+
+            return nepalTime;
+        }
     }
 }
