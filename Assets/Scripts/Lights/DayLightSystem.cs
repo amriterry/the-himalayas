@@ -34,6 +34,18 @@ namespace TheHimalayas.Lights {
         /// </summary>
         private const int SUN_RISE_HOUR = 6;
 
+        /// <summary>
+        /// 
+        /// Lens flare of the light
+        /// 
+        /// </summary>
+        private LensFlare flare;
+
+        // When the script first awakes
+        void Awake() {
+            flare = GetComponent<LensFlare>();
+        }
+
         // When the script initializes
         void Start() {
             UpdateDayLightSystem(Utils.DateTime.GetCurrentDateTimeAtKathmandu());
@@ -53,6 +65,25 @@ namespace TheHimalayas.Lights {
             float currentRotation = minutes * ROTATION_PER_MINUTE;
 
             transform.RotateAround(Vector3.zero, transform.right, currentRotation);
+
+            UpdateFlareBrightness();
+        }
+
+        /// <summary>
+        /// 
+        /// Updates flare brightness based upon the time.
+        /// 
+        /// </summary>
+        private void UpdateFlareBrightness() {
+            float rotationAngle = transform.rotation.eulerAngles.magnitude;
+
+            if (rotationAngle <= 0f || rotationAngle >= 270f) {
+                flare.brightness = 0f;
+            } else if (rotationAngle <= 30f || rotationAngle >= 150f) {
+                flare.brightness = 0.7f;
+            } else {
+                flare.brightness = 1f;
+            }
         }
     }
 }

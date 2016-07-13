@@ -2993,7 +2993,7 @@ LensFlare:
   m_FadeSpeed: 3
   m_IgnoreLayers:
     serializedVersion: 2
-    m_Bits: 6
+    m_Bits: 4294967295
   m_Directional: 1
 --- !u!1 &1285518504
 GameObject:
