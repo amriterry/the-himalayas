@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
+using TheHimalayas.Input;
 
 public class MountainSceneNavigator : MonoBehaviour {
 
@@ -15,7 +15,7 @@ public class MountainSceneNavigator : MonoBehaviour {
     /// One Finger Rotation gesture recognizer
     /// 
     /// </summary>
-    private TKOneFingerRotationRecognizer recognizer;
+    public OneFingerRotationGestureInput recognizer;
 
     // When the script awakes
     void Awake() {
@@ -29,11 +29,7 @@ public class MountainSceneNavigator : MonoBehaviour {
 	
 	// Update is called once per frame
 	void AddRotationRecognizer () {
-        recognizer = new TKOneFingerRotationRecognizer();
-
-        recognizer.gestureRecognizedEvent += RotateScene;
-
-        TouchKit.addGestureRecognizer(recognizer);
+        recognizer.OnRotationDetected += RotateScene;
     }
 
     /// <summary>
@@ -42,12 +38,12 @@ public class MountainSceneNavigator : MonoBehaviour {
     /// 
     /// </summary>
     /// <param name="r">Rotation data</param>
-    void RotateScene(TKOneFingerRotationRecognizer r) {
-        Camera.main.transform.RotateAround(lookAtTarget.position, Vector3.up, r.deltaRotation);
+    void RotateScene(float deltaRotation) {
+        Camera.main.transform.RotateAround(lookAtTarget.position, Vector3.up, deltaRotation);
     }
 
     // When the script gets destroyed
     void OnDestroy() {
-        recognizer.gestureRecognizedEvent -= RotateScene;
+        recognizer.OnRotationDetected -= RotateScene;
     }
 }
