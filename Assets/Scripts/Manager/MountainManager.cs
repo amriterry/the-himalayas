@@ -39,7 +39,10 @@ namespace TheHimalayas.Manager {
                     }
                 }
             }
+        }
 
+        // Use this when script first starts
+        void Start() {
             factory = GetComponent<MountainFactory>();
 
             AppEngine.Instance.GetMountainStore().InitailizeStore(factory.GetMountains());
