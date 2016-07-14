@@ -1829,6 +1829,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 405988a1fcc119147bfb9d1dd079073a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  viewModeSelectorPanel: {fileID: 1343884728}
   mountainSelectorPanelContainer: {fileID: 1568816172}
   detailWeatherPanel: {fileID: 1608693356}
   forecastPanel: {fileID: 2029872114}
@@ -3279,6 +3280,10 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f6561e525991e9a40addcf48826e498d, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1343884728 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 147012, guid: 11247615c8c1b5c47b59b9d71e99fea6, type: 2}
+  m_PrefabInternal: {fileID: 1102047475}
 --- !u!224 &1343884729 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 22497668, guid: 11247615c8c1b5c47b59b9d71e99fea6,
@@ -4804,7 +4809,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1998661103}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 762710515}
+        m_MethodName: ToggleViewModeSelector
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1998661103

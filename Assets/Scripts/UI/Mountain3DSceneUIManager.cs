@@ -1,13 +1,16 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using TheHimalayas.Engine;
-using TheHimalayas.Core;
-using System.Collections.Generic;
 
 namespace TheHimalayas.UI {
 
     public class Mountain3DSceneUIManager : MonoBehaviour {
+
+        /// <summary>
+        /// 
+        /// View Mode Selector Panel
+        /// 
+        /// </summary>
+        public GameObject viewModeSelectorPanel;
 
         /// <summary>
         /// 
@@ -40,6 +43,15 @@ namespace TheHimalayas.UI {
         // When the script first awakens
         void Awake() {
             weatherUIManager = GetComponent<MountainWeatherUIManager>();
+        }
+
+        /// <summary>
+        /// 
+        /// Toggles View Mode Selector Panel
+        /// 
+        /// </summary>
+        public void ToggleViewModeSelector() {
+            viewModeSelectorPanel.SetActive(!viewModeSelectorPanel.activeInHierarchy);
         }
 
         /// <summary>
