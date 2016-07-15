@@ -44,6 +44,13 @@ namespace TheHimalayas.Manager {
 
         /// <summary>
         /// 
+        /// Mountain Place Manager instance.
+        /// 
+        /// </summary>
+        private MountainPlaceManager placeManager;
+
+        /// <summary>
+        /// 
         /// Terrain Factory Instance.
         /// 
         /// </summary>
@@ -55,6 +62,11 @@ namespace TheHimalayas.Manager {
         /// 
         /// </summary>
         private static HeightMapTerrain terrain;
+
+        // Use this for initialization
+        void Awake() {
+            placeManager = GetComponent<MountainPlaceManager>();
+        }
 
         /// <summary>
         /// 
@@ -78,6 +90,7 @@ namespace TheHimalayas.Manager {
             }
 
             terrain.name = mountain.name;
+            placeManager.SetPlacePointers(mountain.places, terrain, numTilesX * tileSize, heightMultiplier, numTilesZ * tileSize);
         }
 
         /// <summary>

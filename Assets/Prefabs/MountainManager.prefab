@@ -11,6 +11,7 @@ GameObject:
   - 114: {fileID: 11475640}
   - 114: {fileID: 11485760}
   - 114: {fileID: 11432186}
+  - 114: {fileID: 11463468}
   m_Layer: 0
   m_Name: MountainManager
   m_TagString: Untagged
@@ -42,7 +43,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3101c18f88ea514b91bc9c12d36666a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  numTilesX: 254
+  numTilesZ: 254
+  tileSize: 20
+  heightMultiplier: 1400
   mountainMaterial: {fileID: 2100000, guid: 27c52fb8c72aced4eae99048cbf64d0c, type: 2}
+--- !u!114 &11463468
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 132522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a687a5865d28fa544a74773472331195, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  placePointerPrefab: {fileID: 159728, guid: a44cdc682ac6b70439b3caf49ac18ac1, type: 2}
+  placePointerWidth: 1200
+  placePointerIconWidth: 200
+  yOffset: 50
 --- !u!114 &11475640
 MonoBehaviour:
   m_ObjectHideFlags: 1
