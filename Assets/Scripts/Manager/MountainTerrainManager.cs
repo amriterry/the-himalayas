@@ -9,6 +9,34 @@ namespace TheHimalayas.Manager {
 
         /// <summary>
         /// 
+        /// Number of tiles in X-axis
+        /// 
+        /// </summary>
+        public int numTilesX = 254;
+
+        /// <summary>
+        /// 
+        /// Number of tiles in Z-axis
+        /// 
+        /// </summary>
+        public int numTilesZ = 254;
+
+        /// <summary>
+        /// 
+        /// Size of each tile 
+        /// 
+        /// </summary>
+        public float tileSize = 20f;
+
+        /// <summary>
+        /// 
+        /// Height Multiplier
+        /// 
+        /// </summary>
+        public float heightMultiplier = 1400f;
+
+        /// <summary>
+        /// 
         /// Material for mountains
         /// 
         /// </summary>
@@ -39,7 +67,7 @@ namespace TheHimalayas.Manager {
                 terrainFactory = new TerrainFactory.Factory();
             }
 
-            TerrainFactory.TerrainData data = new TerrainFactory.TerrainData(254, 254, 20f, 1400f, mountain.GetHeightMap(), mountainMaterial);
+            TerrainFactory.TerrainData data = new TerrainFactory.TerrainData(numTilesX, numTilesZ, tileSize, heightMultiplier, mountain.GetHeightMap(), mountainMaterial);
 
             if (terrain == null) {
                 terrain = terrainFactory.BuildMesh(data);

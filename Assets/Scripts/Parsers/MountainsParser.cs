@@ -1,7 +1,6 @@
 ﻿using TheHimalayas.Core;
 using System.Collections.Generic;
 using SimpleJSON;
-using System;
 
 namespace TheHimalayas.Parsers {
 
@@ -41,6 +40,7 @@ namespace TheHimalayas.Parsers {
             mountain.wikipediaTitle = ParseMountainWikipediaTitle(mountainJson);
             mountain.coordinates = ParseMountainLocation(mountainJson);
             mountain.heightMapResource = ParseHeightMapResource(mountainJson);
+            mountain.places = ParsePlaces(mountainJson);
 
             return mountain;
         }
@@ -98,6 +98,40 @@ namespace TheHimalayas.Parsers {
         /// <returns>Parsed Height Map file path</returns>
         private static string ParseHeightMapResource(JSONNode mountainJson) {
             return mountainJson["terrain"]["heightMap"];
+        }
+
+        /// <summary>
+        /// 
+        /// Parses places array
+        /// 
+        /// </summary>
+        /// <param name="mountainJson">JSON to be parsed</param>
+        /// <returns>List of places parsed</returns>
+        private static List<Place> ParsePlaces(JSONNode mountainJson) {
+            List<Place> places = new List<Place>();
+
+            foreach(JSONNode place in mountainJson["terrain"]["places"].AsArray) {
+                places.Add(ParsePlace(place));
+            }
+
+            return places;
+        }
+
+        /// <summary>
+        /// 
+        /// Parse a place
+        /// 
+        /// </summary>
+        /// <param name="place">JSON Place Object</param>
+        /// <returns>Place that was parsed</returns>
+        private static Place ParsePlace(JSONNode place) {
+            Place p = new Place();
+
+            p.name = place["name"];
+            p.X = place["location"]["x"].AsFloat;
+            p.Y = place["location"]["y"].AsFloat;
+
+            return p;
         }
     }
 }

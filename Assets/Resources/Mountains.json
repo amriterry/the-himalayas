@@ -9,7 +9,16 @@
       "longitude": 86.9250
     },
     "terrain": {
-        "heightMap" : "everest_heightmap"
+      "heightMap": "everest_heightmap",
+      "places": [
+        {
+          "name": "Mt. Everest",
+          "location": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        }
+      ]
     }
   },
   {
@@ -22,7 +31,16 @@
       "longitude": 88.1467
     },
     "terrain": {
-        "heightMap" : "kangchenjunga_heightmap"
+      "heightMap": "kangchenjunga_heightmap",
+      "places": [
+        {
+          "name": "Kangchenjunga",
+          "location": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        }
+      ]
     }
   },
   {
@@ -35,7 +53,16 @@
       "longitude": 86.9336
     },
     "terrain": {
-        "heightMap" : "lhotse_heightmap"
+      "heightMap": "lhotse_heightmap",
+      "places": [
+        {
+          "name": "Lhotse",
+          "location": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        }
+      ]
     }
   },
   {
@@ -48,7 +75,16 @@
       "longitude": 87.0912
     },
     "terrain": {
-        "heightMap" : "makalu_heightmap"
+      "heightMap": "makalu_heightmap",
+      "places": [
+        {
+          "name": "Makalu",
+          "location": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        }
+      ]
     }
   },
   {
@@ -61,7 +97,16 @@
       "longitude": 86.6585
     },
     "terrain": {
-        "heightMap" : "chooyu_heightmap"
+      "heightMap": "chooyu_heightmap",
+      "places": [
+        {
+          "name": "Cho Oyu",
+          "location": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        }
+      ]
     }
   },
   {
@@ -74,7 +119,16 @@
       "longitude": 88.5597
     },
     "terrain": {
-        "heightMap" : "manaslu_heightmap"
+      "heightMap": "manaslu_heightmap",
+      "places": [
+        {
+          "name": "Manaslu",
+          "location": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        }
+      ]
     }
   }
 ]

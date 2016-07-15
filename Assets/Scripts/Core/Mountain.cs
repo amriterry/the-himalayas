@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace TheHimalayas.Core {
 
@@ -38,6 +39,13 @@ namespace TheHimalayas.Core {
         /// 
         /// </summary>
         public string heightMapResource;
+
+        /// <summary>
+        /// 
+        /// List of places
+        /// 
+        /// </summary>
+        public List<Place> places;
 
         /// <summary>
         /// 
