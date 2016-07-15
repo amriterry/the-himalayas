@@ -17,6 +17,20 @@
             "x": 0.5,
             "y": 0.5
           }
+        },
+        {
+          "name": "Makalu",
+          "location": {
+            "x": 0.7687,
+            "y": 0.3237
+          }
+        },
+        {
+          "name": "Cho Oyu",
+          "location": {
+            "x": 0.0666,
+            "y": 0.7049
+          }
         }
       ]
     }
@@ -61,74 +75,109 @@
             "x": 0.5,
             "y": 0.5
           }
-        }
-      ]
-    }
-  },
-  {
-    "key": "makalu",
-    "name": "Makalu",
-    "elevation": 8481,
-    "wikipedia_title": "Makalu",
-    "coordinates": {
-      "latitude": 27.8860,
-      "longitude": 87.0912
-    },
-    "terrain": {
-      "heightMap": "makalu_heightmap",
-      "places": [
-        {
-          "name": "Makalu",
-          "location": {
-            "x": 0.5,
-            "y": 0.5
-          }
-        }
-      ]
-    }
-  },
-  {
-    "key": "chooyu",
-    "name": "Cho Oyu",
-    "elevation": 8201,
-    "wikipedia_title": "Cho_Oyu",
-    "coordinates": {
-      "latitude": 28.0973,
-      "longitude": 86.6585
-    },
-    "terrain": {
-      "heightMap": "chooyu_heightmap",
-      "places": [
+        },
         {
           "name": "Cho Oyu",
           "location": {
-            "x": 0.5,
-            "y": 0.5
+            "x": 0.0536,
+            "y": 0.7474
           }
-        }
-      ]
-    }
-  },
-  {
-    "key": "manaslu",
-    "name": "Manaslu",
-    "elevation": 8156,
-    "wikipedia_title": "Manaslu",
-    "coordinates": {
-      "latitude": 28.5497,
-      "longitude": 88.5597
-    },
-    "terrain": {
-      "heightMap": "manaslu_heightmap",
-      "places": [
+        },
         {
-          "name": "Manaslu",
+          "name": "Makalu",
           "location": {
-            "x": 0.5,
-            "y": 0.5
+            "x": 0.7567,
+            "y": 0.3644
           }
         }
-      ]
+       ]
+      }
+    },
+    {
+      "key": "makalu",
+      "name": "Makalu",
+      "elevation": 8481,
+      "wikipedia_title": "Makalu",
+      "coordinates": {
+        "latitude": 27.8860,
+        "longitude": 87.0912
+      },
+      "terrain": {
+        "heightMap": "makalu_heightmap",
+        "places": [
+          {
+            "name": "Makalu",
+            "location": {
+              "x": 0.5,
+              "y": 0.5
+            }
+          },
+          {
+            "name": "Everest",
+            "location": {
+              "x": 0.2275,
+              "y": 0.6919
+            }
+          }
+        ]
+      }
+    },
+    {
+      "key": "chooyu",
+      "name": "Cho Oyu",
+      "elevation": 8201,
+      "wikipedia_title": "Cho_Oyu",
+      "coordinates": {
+        "latitude": 28.0973,
+        "longitude": 86.6585
+      },
+      "terrain": {
+        "heightMap": "chooyu_heightmap",
+        "places": [
+          {
+            "name": "Cho Oyu",
+            "location": {
+              "x": 0.5,
+              "y": 0.5
+            }
+          },
+          {
+            "name": "Everest",
+            "location": {
+              "x": 0.9324,
+              "y": 0.3052
+            }
+          }
+        ]
+      }
+    },
+    {
+      "key": "manaslu",
+      "name": "Manaslu",
+      "elevation": 8156,
+      "wikipedia_title": "Manaslu",
+      "coordinates": {
+        "latitude": 28.5497,
+        "longitude": 88.5597
+      },
+      "terrain": {
+        "heightMap": "manaslu_heightmap",
+        "places": [
+          {
+            "name": "Manaslu",
+            "location": {
+              "x": 0.5,
+              "y": 0.5
+            }
+          },
+          {
+            "name": "Himalchuli",
+            "location": {
+              "x": 0.6281,
+              "y": 0.2932
+            }
+          }
+        ]
+      }
     }
-  }
-]
+  ]
