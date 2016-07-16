@@ -27,6 +27,13 @@ namespace TheHimalayas.UI {
         /// </summary>
         private const int MOUNTAIN_LOCATOR_SCENE = 2;
 
+        // Called Each frame
+        void Update() {
+            if(UnityEngine.Input.GetKeyDown(KeyCode.Escape)) {
+                Application.Quit();
+            }
+        }
+
         // When the script enables
         void OnEnable() {
             mountainSelector.viewMountainBtn.onClick.AddListener(HideInteractables);

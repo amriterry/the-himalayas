@@ -1,8 +1,9 @@
-﻿using System;
-using TheHimalayas.Core;
+﻿using TheHimalayas.Core;
 using TheHimalayas.Engine;
 using TheHimalayas.UI;
+using TheHimalayas.Utils;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace TheHimalayas.Manager {
 
@@ -50,6 +51,13 @@ namespace TheHimalayas.Manager {
             weatherUIManager.SetWeatherLoadingText();
 
             mountainWeatherManager.LoadMountainCurrentWeather(pointedMountain);
+        }
+
+        // Called each frame
+        void Update() {
+            if(UnityEngine.Input.GetKeyDown(KeyCode.Escape)) {
+                SceneManager.LoadScene(AppScene.MENU_SCENE);
+            }
         }
 
         // When the script enables
