@@ -35,13 +35,8 @@ namespace TheHimalayas.Manager {
         }
 
         // When the script enables
-        void OnEnable() {
+        void OnStart() {
             trackerManager.OnTrackingStateChanged += TrackingStateChanged;
-        }
-
-        // When the script disables
-        void OnDisable() {
-            trackerManager.OnTrackingStateChanged -= TrackingStateChanged;
         }
 
         // Tracking State Changed Event Handler
