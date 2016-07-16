@@ -1,8 +1,6 @@
 ﻿using UnityEngine;
 using TheHimalayas.Engine;
 using TheHimalayas.Factory;
-using TerrainFactory;
-using TheHimalayas.Core;
 
 namespace TheHimalayas.Manager {
 
@@ -26,11 +24,11 @@ namespace TheHimalayas.Manager {
         void Awake() {
             DontDestroyOnLoad(gameObject);
 
-            if (MountainManager.instance == null) {
-                instance = GameObject.FindObjectOfType<MountainManager>();
+            if (instance == null) {
+                instance = FindObjectOfType<MountainManager>();
             }
 
-            MountainManager[] controllers = GameObject.FindObjectsOfType<MountainManager>();
+            MountainManager[] controllers = FindObjectsOfType<MountainManager>();
 
             if (controllers.Length > 1) {
                 foreach (MountainManager controller in controllers) {

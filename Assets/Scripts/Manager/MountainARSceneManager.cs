@@ -1,22 +1,27 @@
 ﻿using UnityEngine;
 using TerrainFactory;
-using Vuforia;
-using System;
 
 namespace TheHimalayas.Manager {
 
-    public class MountainARSceneManager : MonoBehaviour, ITrackableEventHandler {
+    public class MountainARSceneManager : MonoBehaviour {
 
         /// <summary>
         /// 
-        /// Trackable Behaviour instance
+        /// TrackerEventManager instance
         /// 
         /// </summary>
-        private TrackableBehaviour trackableBehaviour;
+        public TrackerEventManager trackerManager;
+
+        /// <summary>
+        /// 
+        /// Place Pointers in the scene
+        /// 
+        /// </summary>
+        private GameObject[] placePointers;
 
         // Use this for initialization
         void Start () {
-            HeightMapTerrain mountain = GameObject.FindObjectOfType<HeightMapTerrain>();
+            HeightMapTerrain mountain = FindObjectOfType<HeightMapTerrain>();
 
             if( mountain == null) {
                 Debug.LogError("No HeightMapTerrain to load");
@@ -26,32 +31,29 @@ namespace TheHimalayas.Manager {
                 mountain.gameObject.transform.localPosition = new Vector3(- 1.25f, 0 ,- 1.25f);
             }
 
-            trackableBehaviour = GetComponent<TrackableBehaviour>();
-
-            if(trackableBehaviour) {
-                trackableBehaviour.RegisterTrackableEventHandler(this);
-            }
+            placePointers = GameObject.FindGameObjectsWithTag("PlacePointer");
         }
 
-        public void OnTrackableStateChanged(TrackableBehaviour.Status previousStatus, TrackableBehaviour.Status newStatus) {
-            if (newStatus == TrackableBehaviour.Status.DETECTED ||
-                newStatus == TrackableBehaviour.Status.TRACKED ||
-                newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED) {
-                OnTrackingFound();
+        // When the script enables
+        void OnEnable() {
+            trackerManager.OnTrackingStateChanged += TrackingStateChanged;
+        }
+
+        // When the script disables
+        void OnDisable() {
+            trackerManager.OnTrackingStateChanged -= TrackingStateChanged;
+        }
+
+        // Tracking State Changed Event Handler
+        void TrackingStateChanged(bool isTracking) {
+            if(isTracking) {
+                foreach(var pointer in placePointers) {
+                    pointer.SetActive(true);
+                }
             } else {
-                OnTrackingLost();
-            }
-        }
-
-        private void OnTrackingFound() {
-            foreach(Transform pointer in gameObject.transform.GetChild(0)) {
-                pointer.gameObject.SetActive(true);
-            }
-        }
-
-        private void OnTrackingLost() {
-            foreach(Transform pointer in gameObject.transform.GetChild(0)) {
-                pointer.gameObject.SetActive(false);
+                foreach (var pointer in placePointers) {
+                    pointer.SetActive(false);
+                }
             }
         }
     }
