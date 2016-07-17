@@ -21,6 +21,13 @@ namespace TheHimalayas.Manager {
         /// </summary>
         public Slider lightSystemSlider;
 
+        /// <summary>
+        /// 
+        /// Time Marker Text
+        /// 
+        /// </summary>
+        private Text timeMarkerText;
+
         // When the script first enables
         void OnEnable() {
             lightSystemSlider.onValueChanged.AddListener(SliderUpdated);
@@ -33,6 +40,8 @@ namespace TheHimalayas.Manager {
 
         // When the script first initializes
         void Start() {
+            timeMarkerText = lightSystemSlider.transform.GetComponentInChildren<Text>();
+
             UpdateDayLightSystem();
         }
 
@@ -49,6 +58,8 @@ namespace TheHimalayas.Manager {
             float hourValue = currentTime.Hour + currentTime.Minute / 60f;
 
             lightSystemSlider.value = hourValue;
+
+            timeMarkerText.text = currentTime.Hour + ":" + currentTime.Minute;
         }
 
         /// <summary>
@@ -67,6 +78,8 @@ namespace TheHimalayas.Manager {
             datetime = datetime.AddHours(hour).AddMinutes(min);
 
             lightSystem.UpdateDayLightSystem(datetime);
+
+            timeMarkerText.text = datetime.Hour + ":" + datetime.Minute;
         }
 
         /// <summary>
