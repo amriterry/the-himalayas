@@ -58,7 +58,7 @@ namespace TheHimalayas.Lights {
         /// </summary>
         /// <param name="dateTime">Time from which the rotation is to be calculated</param>
         public void UpdateDayLightSystem(DateTime dateTime) {
-            transform.rotation = Quaternion.identity;
+            transform.rotation = Quaternion.Euler(0f, -90f, 0f);
 
             int minutes = (dateTime.Hour - SUN_RISE_HOUR) * HOUR + dateTime.Minute;
 
