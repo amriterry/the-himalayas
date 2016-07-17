@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace TheHimalayas.UI {
 
@@ -35,6 +36,20 @@ namespace TheHimalayas.UI {
 
         /// <summary>
         /// 
+        /// Network status text
+        /// 
+        /// </summary>
+        public Text networkStatusText;
+
+        /// <summary>
+        /// 
+        /// Network error panel
+        /// 
+        /// </summary>
+        public GameObject networkErrorPanel;
+
+        /// <summary>
+        /// 
         /// Mountain Weather UI Manager
         /// 
         /// </summary>
@@ -61,6 +76,33 @@ namespace TheHimalayas.UI {
         /// </summary>
         public void ToggleMountainSelector() {
             mountainSelectorPanelContainer.SetActive(!mountainSelectorPanelContainer.activeInHierarchy);
+        }
+
+        /// <summary>
+        /// 
+        /// Updates Network Error Text
+        /// 
+        /// </summary>
+        public void SetNetworkErrorText() {
+            networkStatusText.text = "Ya'sure ur connected?";
+        }
+
+        /// <summary>
+        /// 
+        /// Shows Network Error Panel
+        /// 
+        /// </summary>
+        public void ShowNetworkErrorPanel() {
+            networkErrorPanel.SetActive(true);
+        }
+
+        /// <summary>
+        /// 
+        /// Hides network panel
+        /// 
+        /// </summary>
+        public void HideNetworkPanel() {
+            networkErrorPanel.SetActive(false);
         }
 
         /// <summary>

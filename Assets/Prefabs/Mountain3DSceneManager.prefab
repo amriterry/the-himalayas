@@ -11,7 +11,6 @@ GameObject:
   - 114: {fileID: 11459906}
   - 114: {fileID: 11410512}
   - 114: {fileID: 11492914}
-  - 114: {fileID: 11461490}
   m_Layer: 0
   m_Name: Mountain3DSceneManager
   m_TagString: Untagged
@@ -67,6 +66,38 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &158688
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 483876}
+  - 114: {fileID: 11464136}
+  m_Layer: 0
+  m_Name: MountainWeatherUIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &161018
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 445782}
+  - 114: {fileID: 11439970}
+  m_Layer: 0
+  m_Name: MountainForecastUIManger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &176702
 GameObject:
   m_ObjectHideFlags: 1
@@ -83,6 +114,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &179470
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 462724}
+  - 114: {fileID: 11436656}
+  m_Layer: 0
+  m_Name: Mountain3DSceneUIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &403446
 Transform:
   m_ObjectHideFlags: 1
@@ -92,6 +139,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 496480}
   m_RootOrder: 0
@@ -104,9 +152,36 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 480968}
   m_RootOrder: 0
+--- !u!4 &445782
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 161018}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 475942}
+  m_RootOrder: 3
+--- !u!4 &462724
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 179470}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 475942}
+  m_RootOrder: 4
 --- !u!4 &475942
 Transform:
   m_ObjectHideFlags: 1
@@ -116,9 +191,13 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 480968}
   - {fileID: 496480}
+  - {fileID: 483876}
+  - {fileID: 445782}
+  - {fileID: 462724}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &480968
@@ -130,10 +209,24 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 444140}
   m_Father: {fileID: 475942}
   m_RootOrder: 0
+--- !u!4 &483876
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 158688}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 475942}
+  m_RootOrder: 2
 --- !u!4 &496480
 Transform:
   m_ObjectHideFlags: 1
@@ -143,6 +236,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 403446}
   m_Father: {fileID: 475942}
@@ -159,6 +253,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weatherManager: {fileID: 11439744}
+  sceneUIManager: {fileID: 11436656}
+--- !u!114 &11436656
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 179470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 405988a1fcc119147bfb9d1dd079073a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewModeSelectorPanel: {fileID: 0}
+  mountainSelectorPanelContainer: {fileID: 0}
+  detailWeatherPanel: {fileID: 0}
+  forecastPanel: {fileID: 0}
+  networkStatusText: {fileID: 0}
+  networkErrorPanel: {fileID: 0}
 --- !u!114 &11439744
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -171,6 +283,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weatherClient: {fileID: 11474128}
+--- !u!114 &11439970
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 161018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafd1f5a0ec3beb419c22a8665c4983d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadingText: {fileID: 0}
+  forecastPanels:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &11448736
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -193,19 +320,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3f8c501f98f6664faa157cb5c683514, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiManager: {fileID: 0}
---- !u!114 &11461490
+  dataRefreshTimeMin: 10
+  weatherUIManager: {fileID: 11464136}
+  forecastUIManager: {fileID: 11439970}
+  sceneUIManager: {fileID: 11436656}
+--- !u!114 &11464136
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 104664}
+  m_GameObject: {fileID: 158688}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 405988a1fcc119147bfb9d1dd079073a, type: 3}
+  m_Script: {fileID: 11500000, guid: 250db9ceeb0c5914db5f3b6ee0e57d96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mountainSelectorPanelContainer: {fileID: 0}
+  mountainTexts:
+  - {fileID: 0}
+  - {fileID: 0}
+  weatherStatusText: {fileID: 0}
+  locationText: {fileID: 0}
+  coordinatesText: {fileID: 0}
+  temperatureText: {fileID: 0}
+  minMaxTempText: {fileID: 0}
+  pressureText: {fileID: 0}
+  cloudinessText: {fileID: 0}
+  dctText: {fileID: 0}
 --- !u!114 &11466026
 MonoBehaviour:
   m_ObjectHideFlags: 1

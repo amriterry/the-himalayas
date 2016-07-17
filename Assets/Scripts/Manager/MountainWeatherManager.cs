@@ -1,6 +1,7 @@
 ﻿using TheHimalayas.Core;
 using TheHimalayas.Engine;
 using TheHimalayas.Factory;
+using TheHimalayas.UI;
 using UnityEngine;
 
 namespace TheHimalayas.Manager {
@@ -13,6 +14,13 @@ namespace TheHimalayas.Manager {
         /// 
         /// </summary>
         public CurrentWeatherDataManager weatherManager;
+
+        /// <summary>
+        /// 
+        /// Mountain 3D Scene UI Manager.
+        /// 
+        /// </summary>
+        public Mountain3DSceneUIManager sceneUIManager;
 
         /// <summary>
         /// 
@@ -40,7 +48,7 @@ namespace TheHimalayas.Manager {
         /// </summary>
         /// <param name="error">Error Response Text</param>
         private void OnCurrentWeatherLoadError(string error) {
-            //AppEngine.Instance.weatherUIManager.SetLoadErrorText();
+            sceneUIManager.SetNetworkErrorText();
         }
 
         /// <summary>

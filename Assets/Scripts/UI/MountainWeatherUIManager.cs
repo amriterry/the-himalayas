@@ -30,13 +30,6 @@ namespace TheHimalayas.UI {
 
         /// <summary>
         /// 
-        /// Weather text
-        ///  
-        /// </summary>
-        public Text weatherText;
-
-        /// <summary>
-        /// 
         /// Corrdinates of mountain text
         /// 
         /// </summary>
@@ -101,7 +94,6 @@ namespace TheHimalayas.UI {
         /// 
         /// </summary>
         private void TruncateWeatherUITexts() {
-            weatherText.text = "";
             locationText.text = "";
             coordinatesText.text = "";
             temperatureText.text = "";
@@ -137,8 +129,6 @@ namespace TheHimalayas.UI {
 
             UpdateLocation(weather.cityName);
 
-            UpdateWeatherBrief("Weather");
-
             UpdateCoordinates(weather.location.ToString());
 
             UpdateTemperature(weather.temperature.ToCelciusString());
@@ -160,16 +150,6 @@ namespace TheHimalayas.UI {
         /// <param name="city">City to be updated</param>
         private void UpdateLocation(string city) {
             locationText.text = "City: " + city;
-        }
-
-        /// <summary>
-        /// 
-        /// Updates weather brief
-        /// 
-        /// </summary>
-        /// <param name="weather">Weather brief text</param>
-        private void UpdateWeatherBrief(string weather) {
-            weatherText.text = weather;
         }
 
         /// <summary>

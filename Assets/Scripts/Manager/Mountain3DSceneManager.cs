@@ -1,13 +1,20 @@
-﻿using TheHimalayas.Core;
-using TheHimalayas.Engine;
+﻿using UnityEngine;
 using TheHimalayas.UI;
+using TheHimalayas.Core;
 using TheHimalayas.Utils;
-using UnityEngine;
+using TheHimalayas.Engine;
 using UnityEngine.SceneManagement;
 
 namespace TheHimalayas.Manager {
 
     public class Mountain3DSceneManager : MonoBehaviour {
+
+        /// <summary>
+        /// 
+        /// Time of refresh data.
+        /// 
+        /// </summary>
+        public float dataRefreshTimeMin;
 
         /// <summary>
         /// 
@@ -25,6 +32,13 @@ namespace TheHimalayas.Manager {
 
         /// <summary>
         /// 
+        /// Mountain 3D Scene UI Manager.
+        /// 
+        /// </summary>
+        public Mountain3DSceneUIManager sceneUIManager;
+
+        /// <summary>
+        /// 
         /// Mountain Weather Manager Object
         /// 
         /// </summary>
@@ -37,28 +51,19 @@ namespace TheHimalayas.Manager {
         /// </summary>
         private MountainForecastManager mountainForecastManager;
 
-        // When the script first awakens
-        void Awake() {
-            mountainWeatherManager = GetComponent<MountainWeatherManager>();
-            mountainForecastManager = GetComponent<MountainForecastManager>();
-        }
+        /// <summary>
+        /// 
+        /// Flag to determine if the first data is loaded
+        /// 
+        /// </summary>
+        private bool isFirstDataLoaded = false;
 
-        // Use this for initialization
-        void Start() {
-            Mountain pointedMountain = AppEngine.Instance.GetMountainStore().GetPointedMountain();
-
-            weatherUIManager.UpdateMountainTexts(pointedMountain);
-            weatherUIManager.SetWeatherLoadingText();
-
-            mountainWeatherManager.LoadMountainCurrentWeather(pointedMountain);
-        }
-
-        // Called each frame
-        void Update() {
-            if(UnityEngine.Input.GetKeyDown(KeyCode.Escape)) {
-                SceneManager.LoadScene(AppScene.MENU_SCENE);
-            }
-        }
+        /// <summary>
+        /// 
+        /// Flag to determine if the data is loading
+        /// 
+        /// </summary>
+        private bool isDataLoading = false;
 
         // When the script enables
         void OnEnable() {
@@ -66,10 +71,52 @@ namespace TheHimalayas.Manager {
             AppEngine.Instance.GetForecastStore().AddOnStoreUpdateListener(OnForecastStoreUpdated);
         }
 
-        // When the script disables
-        void OnDisable() {
-            AppEngine.Instance.GetWeatherStore().ForgetOnStoreUpdateListener(OnWeatherStoreUpdated);
-            AppEngine.Instance.GetForecastStore().ForgetOnStoreUpdateListener(OnForecastStoreUpdated);
+        // When the script first awakens
+        void Awake() {
+            mountainWeatherManager = GetComponent<MountainWeatherManager>();
+            mountainForecastManager = GetComponent<MountainForecastManager>();
+        }
+
+        // Called each frame
+        void Update() {
+            if (UnityEngine.Input.GetKeyDown(KeyCode.Escape)) {
+                SceneManager.LoadScene(AppScene.MENU_SCENE);
+            }
+        }
+
+        // updates each physics tick
+        void FixedUpdate() {
+            if (Application.internetReachability == NetworkReachability.NotReachable) {
+                sceneUIManager.ShowNetworkErrorPanel();
+
+                if(!isFirstDataLoaded) {
+                    isDataLoading = false;
+                }
+            } else {
+                sceneUIManager.HideNetworkPanel();
+
+                if( ! isFirstDataLoaded && ! isDataLoading) {
+                    LoadMountainWeather();
+                }
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// Loads Mountain Weather
+        /// 
+        /// </summary>
+        private void LoadMountainWeather() {
+            if( ! isDataLoading) {
+                isDataLoading = true;
+
+                Mountain pointedMountain = AppEngine.Instance.GetMountainStore().GetPointedMountain();
+
+                weatherUIManager.UpdateMountainTexts(pointedMountain);
+                weatherUIManager.SetWeatherLoadingText();
+
+                mountainWeatherManager.LoadMountainCurrentWeather(pointedMountain);
+            }
         }
 
         /// <summary>
@@ -94,6 +141,11 @@ namespace TheHimalayas.Manager {
         /// <param name="value">Forecast value that was updated</param>
         private void OnForecastStoreUpdated(Mountain key, Forecast value) {
             forecastUIManager.UpdateForecastUI(value);
+
+            isFirstDataLoaded = true;
+            isDataLoading = false;
+
+            Invoke("LoadMountainWeather", dataRefreshTimeMin * 60f);
         }
     }
 }
