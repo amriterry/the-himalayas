@@ -4,6 +4,7 @@ using TheHimalayas.Core;
 using TheHimalayas.Utils;
 using TheHimalayas.Engine;
 using UnityEngine.SceneManagement;
+using TheHimalayas.SceneUtils;
 
 namespace TheHimalayas.Manager {
 
@@ -15,6 +16,13 @@ namespace TheHimalayas.Manager {
         /// 
         /// </summary>
         public float dataRefreshTimeMin;
+
+        /// <summary>
+        /// 
+        /// View Mode selector instance.
+        /// 
+        /// </summary>
+        public ViewModeSelector modeSelector;
 
         /// <summary>
         /// 
@@ -80,7 +88,11 @@ namespace TheHimalayas.Manager {
         // Called each frame
         void Update() {
             if (UnityEngine.Input.GetKeyDown(KeyCode.Escape)) {
-                SceneManager.LoadScene(AppScene.MENU_SCENE);
+                if(modeSelector.IsInVRMode) {
+                    modeSelector.ChangeTo3DMode();
+                } else {
+                    SceneManager.LoadScene(AppScene.MENU_SCENE);
+                }
             }
         }
 

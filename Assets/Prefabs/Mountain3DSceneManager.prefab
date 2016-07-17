@@ -321,6 +321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dataRefreshTimeMin: 10
+  modeSelector: {fileID: 0}
   weatherUIManager: {fileID: 11464136}
   forecastUIManager: {fileID: 11439970}
   sceneUIManager: {fileID: 11436656}

@@ -125,18 +125,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 11439970, guid: db8a7bde582c32641a96a37316a18389, type: 2}
-      propertyPath: loadingText
+    - target: {fileID: 11459906, guid: db8a7bde582c32641a96a37316a18389, type: 2}
+      propertyPath: modeSelector
       value: 
-      objectReference: {fileID: 1588625102}
-    - target: {fileID: 11439970, guid: db8a7bde582c32641a96a37316a18389, type: 2}
-      propertyPath: forecastPanels.Array.data[0]
-      value: 
-      objectReference: {fileID: 1952911780}
-    - target: {fileID: 11439970, guid: db8a7bde582c32641a96a37316a18389, type: 2}
-      propertyPath: forecastPanels.Array.data[1]
-      value: 
-      objectReference: {fileID: 2044101545}
+      objectReference: {fileID: 1343884730}
     - target: {fileID: 11464136, guid: db8a7bde582c32641a96a37316a18389, type: 2}
       propertyPath: mountainTexts.Array.data[0]
       value: 
@@ -177,6 +169,18 @@ Prefab:
       propertyPath: dctText
       value: 
       objectReference: {fileID: 943995805}
+    - target: {fileID: 11439970, guid: db8a7bde582c32641a96a37316a18389, type: 2}
+      propertyPath: loadingText
+      value: 
+      objectReference: {fileID: 1588625102}
+    - target: {fileID: 11439970, guid: db8a7bde582c32641a96a37316a18389, type: 2}
+      propertyPath: forecastPanels.Array.data[0]
+      value: 
+      objectReference: {fileID: 1952911780}
+    - target: {fileID: 11439970, guid: db8a7bde582c32641a96a37316a18389, type: 2}
+      propertyPath: forecastPanels.Array.data[1]
+      value: 
+      objectReference: {fileID: 2044101545}
     - target: {fileID: 11436656, guid: db8a7bde582c32641a96a37316a18389, type: 2}
       propertyPath: viewModeSelectorPanel
       value: 
@@ -835,6 +839,12 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 283512745}
+--- !u!114 &324587383 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11489844, guid: 970dd4b9371394fb4890965f608d46fd,
+    type: 2}
+  m_PrefabInternal: {fileID: 1268205431}
+  m_Script: {fileID: 11500000, guid: a40b544b8c3553c40852ae7ad35a9343, type: 3}
 --- !u!1001 &328247899
 Prefab:
   m_ObjectHideFlags: 0
@@ -3045,6 +3055,18 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 11411008, guid: 11247615c8c1b5c47b59b9d71e99fea6, type: 2}
+      propertyPath: mainCam
+      value: 
+      objectReference: {fileID: 2066787413}
+    - target: {fileID: 11411008, guid: 11247615c8c1b5c47b59b9d71e99fea6, type: 2}
+      propertyPath: gvrViewer
+      value: 
+      objectReference: {fileID: 324587383}
+    - target: {fileID: 11411008, guid: 11247615c8c1b5c47b59b9d71e99fea6, type: 2}
+      propertyPath: rootCanvas
+      value: 
+      objectReference: {fileID: 510097719}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 11247615c8c1b5c47b59b9d71e99fea6, type: 2}
   m_IsPrefabParent: 0
@@ -3289,6 +3311,60 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6dcb3cca289fce54b8e2c64fdf166c16, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &1268205431
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 498412, guid: 970dd4b9371394fb4890965f608d46fd, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 498412, guid: 970dd4b9371394fb4890965f608d46fd, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 498412, guid: 970dd4b9371394fb4890965f608d46fd, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 498412, guid: 970dd4b9371394fb4890965f608d46fd, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 498412, guid: 970dd4b9371394fb4890965f608d46fd, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 498412, guid: 970dd4b9371394fb4890965f608d46fd, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 498412, guid: 970dd4b9371394fb4890965f608d46fd, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 498412, guid: 970dd4b9371394fb4890965f608d46fd, type: 2}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11489844, guid: 970dd4b9371394fb4890965f608d46fd, type: 2}
+      propertyPath: viewerType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11489844, guid: 970dd4b9371394fb4890965f608d46fd, type: 2}
+      propertyPath: vrModeEnabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 177758, guid: 970dd4b9371394fb4890965f608d46fd, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 970dd4b9371394fb4890965f608d46fd, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1279114058
 GameObject:
   m_ObjectHideFlags: 0
@@ -3424,6 +3500,12 @@ RectTransform:
   m_PrefabParentObject: {fileID: 22497668, guid: 11247615c8c1b5c47b59b9d71e99fea6,
     type: 2}
   m_PrefabInternal: {fileID: 1102047475}
+--- !u!114 &1343884730 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11411008, guid: 11247615c8c1b5c47b59b9d71e99fea6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1102047475}
+  m_Script: {fileID: 11500000, guid: 1eae5ad9a88ec914096eed42f7597fbd, type: 3}
 --- !u!1 &1349349957
 GameObject:
   m_ObjectHideFlags: 0
@@ -5374,7 +5456,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.01
-  far clip plane: 7000
+  far clip plane: 10000
   field of view: 75
   orthographic: 0
   orthographic size: 5
