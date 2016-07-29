@@ -39,7 +39,7 @@ namespace TheHimalayas.Manager {
         // Called each frame
         void Update() {
             if (UnityEngine.Input.GetKeyDown(KeyCode.Escape)) {
-                SceneManager.LoadScene(AppScene.MOUNTAIN_3D_SCENE);
+                AppSceneManager.Instance.LoadMountainScene();
             }
         }
 

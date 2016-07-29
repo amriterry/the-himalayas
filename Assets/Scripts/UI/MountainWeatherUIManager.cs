@@ -1,5 +1,6 @@
 ﻿using System;
 using TheHimalayas.Core;
+using TheHimalayas.Engine;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -73,6 +74,8 @@ namespace TheHimalayas.UI {
         // When the script first starts
         void Start() {
             SetWeatherLoadingText();
+
+            Invoke("SetCurrentMountainTexts", 0.05f);
         }
 
         /// <summary>
@@ -114,6 +117,10 @@ namespace TheHimalayas.UI {
             foreach(Text t in mountainTexts) {
                 t.text = mountain.name;
             }
+        }
+
+        public void SetCurrentMountainTexts() {
+            UpdateMountainTexts(AppEngine.Instance.GetMountainStore().GetPointedMountain());
         }
 
         /// <summary>

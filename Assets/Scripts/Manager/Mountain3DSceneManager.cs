@@ -91,7 +91,7 @@ namespace TheHimalayas.Manager {
                 if(modeSelector.IsInVRMode) {
                     modeSelector.ChangeTo3DMode();
                 } else {
-                    SceneManager.LoadScene(AppScene.MENU_SCENE);
+                    AppSceneManager.Instance.LoadMenuScene();
                 }
             }
         }

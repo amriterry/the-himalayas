@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
-using TheHimalayas.Utils;
-using UnityEngine.SceneManagement;
+using TheHimalayas.Manager;
 
 namespace TheHimalayas.SceneUtils {
 
@@ -72,10 +71,6 @@ namespace TheHimalayas.SceneUtils {
                 gvrViewer.gameObject.SetActive(false);
                 rootCanvas.gameObject.SetActive(true);
 
-                Debug.Log(cameraPosition);
-                Debug.Log(cameraRotation);
-
-
                 mainCam.GetComponent<StereoController>().enabled = false;
                 mainCam.GetComponent<GvrHead>().enabled = false;
 
@@ -90,7 +85,7 @@ namespace TheHimalayas.SceneUtils {
         /// 
         /// </summary>
         public void ChangeToARMode() {
-            ChangeScene(AppScene.MOUNTAIN_AR_SCENE);
+            AppSceneManager.Instance.LoadMountainARScene();
         }
 
         /// <summary>
@@ -120,17 +115,6 @@ namespace TheHimalayas.SceneUtils {
                 }
 
                 mainCam.transform.position = new Vector3(2540f, 1400f, 2540f);
-            }
-        }
-
-        /// <summary>
-        /// 
-        /// Changes the scene
-        /// 
-        /// </summary>
-        private void ChangeScene(int buildIndex) {
-            if(SceneManager.GetActiveScene().buildIndex != buildIndex) {
-                SceneManager.LoadScene(buildIndex);
             }
         }
     }

@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TheHimalayas.Engine;
 using TheHimalayas.Store;
+using TheHimalayas.Manager;
 
 namespace TheHimalayas.UI {
 
@@ -101,10 +102,7 @@ namespace TheHimalayas.UI {
         /// 
         /// </summary>
         private void LoadMountain3DScene() {
-            HideInteractables();
-            UpdateMountainText("Pushing Lands...");
-
-            SceneManager.LoadSceneAsync("Mountain3DScene");
+            AppSceneManager.Instance.LoadMountainScene();
         }
 
         /// <summary>

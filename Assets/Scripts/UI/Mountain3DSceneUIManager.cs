@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using TheHimalayas.Manager;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -111,7 +112,7 @@ namespace TheHimalayas.UI {
         /// 
         /// </summary>
         public void GoToMenuScene() {
-            SceneManager.LoadScene("MenuScene");
+            AppSceneManager.Instance.LoadMenuScene();
         }
 
         /// <summary>

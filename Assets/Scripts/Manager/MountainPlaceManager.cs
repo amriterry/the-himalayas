@@ -81,7 +81,6 @@ namespace TheHimalayas.Manager {
         /// </summary>
         private void DestoryCachedPointers() {
             if(cachedPointers != null) {
-                Debug.Log(cachedPointers.Count);
                 foreach (GameObject pointer in cachedPointers) {
                     if(pointer != null) {
                         pointer.SetActive(false);

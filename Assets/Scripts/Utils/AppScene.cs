@@ -5,5 +5,6 @@
         public const int MENU_SCENE = 0;
         public const int MOUNTAIN_3D_SCENE = 1;
         public const int MOUNTAIN_AR_SCENE = 2;
+        public const int LOADING_SCENE = 3;
     }
 }
