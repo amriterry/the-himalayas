@@ -105,7 +105,7 @@ namespace TerrainFactory {
             }
 
             mesh.vertices = vertices;
-            mesh.Optimize();
+            ;
             mesh.RecalculateNormals();
         }
 
