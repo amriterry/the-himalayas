@@ -92,7 +92,7 @@ namespace TerrainFactory {
 
             Vector3[] meshVerts = mesh.vertices;
             Vector3[] vertices = new Vector3[mesh.vertexCount];
-
+	
 
             for (int z = 0; z < vSizeZ; z++) {
                 for (int x = 0; x < vSizeX; x++) {
@@ -131,7 +131,11 @@ namespace TerrainFactory {
 
             for (int z = 0; z < vSizeZ; z++) {
                 for (int x = 0; x < vSizeX; x++) {
-                    float height = GetHeightFromMap(data.heightMap, data.heightStrength, vSizeX, vSizeZ, z, x);
+					float height = 0f;
+
+					if (!(x == 0 || z == 0 || x == vSizeX - 1 || z == vSizeZ - 1)) {
+						height = GetHeightFromMap(data.heightMap, data.heightStrength, vSizeX, vSizeZ, z, x);
+					}
 
                     points[z * vSizeX + x] = new Vector3(x * data.tileSize, height, z * data.tileSize);
                     uvs[z * vSizeX + x] = new Vector2((float)x / data.numTilesX, (float)z / data.numTilesZ);
