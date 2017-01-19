@@ -34,6 +34,7 @@ namespace TerrainFactory {
             terrainObject.terrainData = data;
             terrainObject.GetComponent<MeshFilter>().mesh = CreateMesh(data);
             terrainObject.GetComponent<MeshRenderer>().material = data.terrainMaterial;
+			terrainObject.GetComponent<MeshRenderer> ().material.mainTexture = data.heightMap;
 
             return terrainObject;
         }
@@ -68,6 +69,7 @@ namespace TerrainFactory {
 
                     if(terrainObject.terrainData.terrainMaterial != data.terrainMaterial) {
                         terrainObject.gameObject.GetComponent<MeshRenderer>().material = data.terrainMaterial;
+						terrainObject.GetComponent<MeshRenderer> ().material.mainTexture = data.heightMap;
                     }
                 } else {
                     BuildMesh(data, terrainObject);
